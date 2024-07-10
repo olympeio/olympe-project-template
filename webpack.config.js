@@ -28,7 +28,6 @@ const versionReplaceFunction = function (versionDir, version) {
 }
 
 const common = {
-  mode: 'production',
   resolve: {
     extensions: ['.js', 'jsx', '.tsx', '.ts'],
     alias: {
@@ -67,18 +66,6 @@ const common = {
     { message: /Comparison with NaN.*/ },
     { message: /Suspicious use of the "!" operator.*/ }
   ],
-  performance: {
-    hints: false // avoid to display warnings related to the js assets size.
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        minify: TerserPlugin.esbuildMinify,
-        terserOptions: {}
-      })
-    ]
-  }
 }
 
 const draw = {
@@ -154,4 +141,28 @@ const node = {
   ]
 }
 
-module.exports = [merge(common, draw), merge(common, node)]
+// Merge this config for development build (default)
+const dev = {
+  mode: 'development',
+  devtool: 'source-map',
+  module: {
+    rules: [
+      { test: /\.js$/, enforce: "pre", use: "source-map-loader"}
+    ]
+  }
+};
+
+// Merge this config for production build
+const prod = {
+  mode: 'production',
+  performance: { hints: false },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin({
+      minify: TerserPlugin.esbuildMinify,
+      terserOptions: {},
+    })],
+  }
+};
+
+module.exports = [merge(dev, common, draw), merge(dev, common, node)]
