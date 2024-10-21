@@ -14,7 +14,7 @@
     "@babel/core": "7.24.4",
     "@babel/preset-env": "7.24.4",
     "@babel/preset-react": "7.24.1",
-    "@olympeio/draw": "2.9.1",
+    "@olympeio/draw": "2.9.2",
     "@olympeio/toolkit": "1.1.0",
     "babel-loader": "9.1.3",
     "clean-webpack-plugin": "4.0.0",
@@ -42,8 +42,8 @@
     "@olympeio-extensions/chartjs": "2.9.1",
     "@olympeio-extensions/lab": "latest",
     "@olympeio/core": "2.9.1",
-    "@olympeio/runtime-node": "9.9.1",
-    "@olympeio/runtime-web": "9.9.1",
+    "@olympeio/runtime-node": "9.9.2",
+    "@olympeio/runtime-web": "9.9.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   }
