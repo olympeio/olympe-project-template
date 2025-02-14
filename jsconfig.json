@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "olympe": ["node_modules/@olympeio/runtime-web", "node_modules/@olympeio/runtime-node", "node_modules/@olympeio/draw"]
+        }
+    },
+    "include": ["./src/**/*", "./node_modules/@olympeio/**/*"]
+}
