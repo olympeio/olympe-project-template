@@ -76,6 +76,14 @@ const draw = {
     path: drawBuildPath,
     globalObject: 'this'
   },
+  resolve: {
+    fallback: { // Required for browser builds, to avoid include amqp-client NodeJS parts.
+      AMQPClient: false,
+      buffer: false,
+      net: false,
+      tls: false,
+    }
+  },
   devServer: {
     compress: true,
     port: 8888,
