@@ -29,7 +29,7 @@ const versionReplaceFunction = function (versionDir, version) {
 
 const common = {
   resolve: {
-    extensions: ['.js', 'jsx', '.tsx', '.ts'],
+    extensions: ['.js', '.jsx', '.tsx', '.ts'],
     alias: {
       olympe: drawPath,
       '@olympeio': path.resolve(__dirname, 'node_modules/@olympeio'),
