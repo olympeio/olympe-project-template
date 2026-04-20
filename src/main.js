@@ -11,7 +11,6 @@ import '@olympeio-extensions/qrcode-zxing';
 import '@olympeio-extensions/samples';
 import '@olympeio-extensions/workflow';
 import '@olympeio-extensions/chartjs';
-import '@olympeio-extensions/lab';
 
 // Import project bricks. We use webpack-import-glob-loader to import all bricks.
 import './bricks/common/**/*.js';
